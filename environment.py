@@ -11,19 +11,71 @@ class ChessBoard:
         """
         Initialize attributes
         """
+        self.pieces = ['pawn', 'rook', 'knight', 'bishop', 'queen', 'king']
+        self.letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
+        self.board = self.set_board()
 
-    def board(self):
+        # Set pieces on the board
+        self.set_chess_pieces()
+        print(self.board)
+
+    def set_board(self):
         """
-        Method for initializing the board
-
+        Method for initializing the board. Uses a dictionary to manage columns, rows and pieces.
         :return:
         """
+        # Set letters
+        board = dict()
+        for rows in range(len(self.letters)):
+            for letter in self.letters:
+                board[letter+str(rows+1)] = 'Unoccupied'
+        return board
 
-    def chess_pieces(self):
+    def set_chess_pieces(self):
         """
-        Method for initializing the pieces
+        Method for initializing the pieces on the board
         :return:
         """
+        # Set white pieces
+        self.board['A1'] = 'white', 'rook'
+        self.board['B1'] = 'white', 'knight'
+        self.board['C1'] = 'white', 'bishop'
+        self.board['D1'] = 'white', 'queen'
+        self.board['E1'] = 'white', 'king'
+        self.board['F1'] = 'white', 'bishop'
+        self.board['G1'] = 'white', 'knight'
+        self.board['H1'] = 'white', 'rook'
+
+        self.board['A2'] = 'white', 'pawn'
+        self.board['B2'] = 'white', 'pawn'
+        self.board['C2'] = 'white', 'pawn'
+        self.board['D2'] = 'white', 'pawn'
+        self.board['E2'] = 'white', 'pawn'
+        self.board['F2'] = 'white', 'pawn'
+        self.board['G2'] = 'white', 'pawn'
+        self.board['H2'] = 'white', 'pawn'
+
+
+        # Set black pieces
+        self.board['A8'] = 'black', 'rook'
+        self.board['B8'] = 'black', 'knight'
+        self.board['C8'] = 'black', 'bishop'
+        self.board['D8'] = 'black', 'queen'
+        self.board['E8'] = 'black', 'king'
+        self.board['F8'] = 'black', 'bishop'
+        self.board['G8'] = 'black', 'knight'
+        self.board['H8'] = 'black', 'rook'
+
+        self.board['A7'] = 'black', 'pawn'
+        self.board['B7'] = 'black', 'pawn'
+        self.board['C7'] = 'black', 'pawn'
+        self.board['D7'] = 'black', 'pawn'
+        self.board['E7'] = 'black', 'pawn'
+        self.board['F7'] = 'black', 'pawn'
+        self.board['G7'] = 'black', 'pawn'
+        self.board['H7'] = 'black', 'pawn'
+
+
 
     def rules(self):
         """
@@ -37,3 +89,8 @@ class ChessBoard:
         :param piece:
         :return:
         """
+
+
+
+if __name__ == '__main__':
+    board = ChessBoard()
