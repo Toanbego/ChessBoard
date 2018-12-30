@@ -15,10 +15,6 @@ class ChessBoard:
         self.letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
         self.board = self.set_board()
 
-        # Set pieces on the board
-        self.set_chess_pieces()
-        print(self.board)
-
     def set_board(self):
         """
         Method for initializing the board. Uses a dictionary to manage columns, rows and pieces.
@@ -31,9 +27,11 @@ class ChessBoard:
                 board[letter+str(rows+1)] = 'Unoccupied'
         return board
 
+
+
     def set_chess_pieces(self):
         """
-        Method for initializing the pieces on the board
+        Method for initializing a normal game of chess
         :return:
         """
         # Set white pieces
@@ -76,13 +74,6 @@ class ChessBoard:
         self.board['H7'] = 'black', 'pawn'
 
 
-
-    def rules(self):
-        """
-        Method that checks the rules for the various pieces
-        :return:
-        """
-
     def move_piece(self, piece):
         """
         Method for moving pieces
@@ -90,7 +81,118 @@ class ChessBoard:
         :return:
         """
 
+    def create_8_queen_problem(self):
+        """
+        place 8 queens randomly on the board
+        :return:
+        """
+
+
+    def __repr__(self):
+        """
+        Prints the current state of the board
+        :return:
+        """
+        return str(self.board)
+
+class Pawn:
+    """
+
+    """
+    def init(self):
+        """
+
+        :return:
+        """
+    def rules(self):
+        """
+        Method that checks the rules for the various pieces
+        :return:
+        """
+
+class Rook:
+    """
+    """
+
+    def init(self):
+        """
+
+        :return:
+        """
+    def rules(self):
+        """
+        Method that checks the rules for the various pieces
+        :return:
+        """
+
+class Bishop:
+    """
+
+    """
+
+    def init(self):
+        """
+
+        :return:
+        """
+    def rules(self):
+        """
+        Method that checks the rules for the various pieces
+        :return:
+        """
+
+class Knight:
+    """
+
+    """
+
+    def init(self):
+        """
+
+        :return:
+        """
+    def rules(self):
+        """
+        Method that checks the rules for the various pieces
+        :return:
+        """
+
+class Queen:
+    """
+
+    """
+
+    def init(self):
+        """
+
+        :return:
+        """
+    def rules(self):
+        """
+        Method that checks the rules for the various pieces
+        :return:
+        """
+
+class King:
+    """
+
+    """
+
+    def init(self):
+        """
+
+        :return:
+        """
+    def rules(self):
+        """
+        Method that checks the rules for the various pieces
+        :return:
+        """
 
 
 if __name__ == '__main__':
     board = ChessBoard()
+    board.set_chess_pieces()
+    print(board)
+
+
